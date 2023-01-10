@@ -21,6 +21,15 @@ parser.add_argument(
     type=str,
     help="The language code for the language of the source text. The language must be a language supported by Amazon Translate.",
     required=True)
+    
+parser.add_argument(
+    '--target-language-code',
+    dest="TargetLanguageCode",
+    type=str,
+    help="The language code for the language of the target text. The language must be a language supported by Amazon Translate.",
+    required=True)
+    
+    
 
 
 def translate_text(**kwargs): 
