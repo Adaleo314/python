@@ -28,7 +28,11 @@ def translate_text(): #declare the function using def, name, braces for paramete
     print(response) #print needs to be within the indent of the function
     
  #main function   
-translate_text() #calling the function. returned as a dictionary
+def main():
+    translate_text() #calling the function. returned as a dictionary
 
 
+#main function determines which code to run first
+if __name__=="__main__":
+    main()
         
