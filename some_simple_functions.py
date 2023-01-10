@@ -22,8 +22,13 @@ client = boto3.client('translate')
 def translate_text(): #declare the function using def, name, braces for parameters and a coloon
     response = client.translate_text(
         Text='I am learning some code in AWS today', #assigning the variable 'text'
-        SourceLanguageCode='en', # 2 letter code from documentation for english
-        TargetLanguageCode='fr'# 2 letter code for documentation for french
+        SourceLanguageCode='en', # 2 letter code from aws documentation for english
+        TargetLanguageCode='fr'# 2 letter code from aws documentation for french
     )
-    print(response)
+    print(response) #print needs to be within the indent of the function
+    
+    
+translate_text() #calling the function. returned as a dictionary
+
+
         
