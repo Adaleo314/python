@@ -1,5 +1,7 @@
 import boto3
 
+#creating an S3 bucket
+
 aws_resource = boto3.resource('s3')
 bucket = aws_resource.Bucket('adaleobucket314')
 
