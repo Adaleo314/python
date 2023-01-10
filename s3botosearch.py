@@ -1,14 +1,10 @@
 import boto3
 
-resource = boto3.client('s3')
+# Retrieve the list of existing buckets
+s3 = boto3.client('s3')
+response = s3.list_buckets()
 
-#list # of buckets
-#see all buckets in s3
-for bucket in resource.buckets.all():
-    print(bucket.name)
-
-#listing creation date of buckets
-
-
-bucket in resource(['Buckets']):
-    print(bucket[Name])
+# Output the bucket names
+print('Existing buckets:')
+for bucket in response['Buckets']:
+    print(f'  {bucket["Name"]}')
