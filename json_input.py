@@ -16,10 +16,11 @@ json_string = """
     ]
 }
 """
-
-def main():
+#printing python to print json similar to python output
+def main()
     json_input = json.loads(json_string)
-    print(json_input)
+    indented_format = json.dumps(json_input, indent=2)
+    print(indented_format)
 
 if __name__=="__main__":
     main()
