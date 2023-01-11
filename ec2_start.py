@@ -18,7 +18,7 @@ instances = resource.create_instances(
             ],
             )
             
-for instance in instances['Instances']:
-    print('Created Instance ID: {}')
+for instance in instances:
+    print(str('Created Instance ID: {}'.format(instance['InstanceId'])))
 ####
     
