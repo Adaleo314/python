@@ -9,6 +9,8 @@ instances = ec2.create_instances(
     MinCount=3,
     MaxCount=3,
     InstanceType='t2.micro')
-    
+    TagSpecifications=[
+        'ResourceType': 'instance',
+        'Tags': ]
 ####
     
