@@ -16,11 +16,17 @@ json_string = """
     ]
 }
 """
-#printing python to print json similar to python output
-def main()
+#nested structure
+def main():
     json_input = json.loads(json_string)
-    indented_format = json.dumps(json_input, indent=2)
-    print(indented_format)
+    text = json_input['Input'][0]['Text']
+    source_language_code = json_input['Input'][0]['SourceLanguageCode']
+    target_language_code = json_input['Input'][0]['TargetLanguageCode']
+    print(text, source_language_code, target_language_code)
+    
+        
+        
+        
 
 if __name__=="__main__":
     main()
