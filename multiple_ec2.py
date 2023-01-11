@@ -18,7 +18,8 @@ instances = resource.create_instances(
             ],
             )
             
-for i in instances[]:
-    print('Created Instance ID: '())
-####
+for instance in instances:  
+    print(f'EC2 instance {instance.id} has been created.')
+        
+       
     
