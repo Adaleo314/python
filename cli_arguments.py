@@ -21,6 +21,17 @@ parser.add_argument(
     type=str,
     help="The language code for the language of the source text. The language must be a language supported by Amazon Translate.",
     required=True)
+    
+parser.add_argument(
+    '--target-language-code',
+    dest="TargetLanguageCode",
+    type=str,
+    help="The language code for the language of the target text. The language must be a language supported by Amazon Translate.",
+    required=True)
+    
+#This will inspect the command line, convert each argument to the appropriate type and then invoke the appropriate action.
+    
+args=parser.parse_args()
 
 
 def translate_text(**kwargs): 
@@ -28,18 +39,10 @@ def translate_text(**kwargs):
     response = client.translate_text(**kwargs)
     print(response) 
 
-### Change below this line only ###
-
-text = input("Provide the text you want translating: ")
-source_language_code = input("Provide the two letter source language code: ")
-target_language_code = input("Provide the two letter target language code: ") 
 
 def main():
-    translate_text(
-        Text=text, 
-        SourceLanguageCode=source_language_code,
-        TargetLanguageCode=target_language_code
-        )
+    # vars() is an inbuilt function which returns a dictionary object
+    translate_text(**vars(args))
 
 if __name__=="__main__":
     main()
