@@ -1,10 +1,10 @@
 import boto3
 
-resource = boto3.resource('ec2')
+ec2_resource = boto3.resource('ec2')
 
 #starting 3 instances for purpose of project
 #ami is Amazon Linux, left out SSH key 
-instances = resource.create_instances(
+instances = ec2_resource.create_instances(
     ImageId='ami-0b5eea76982371e91',
     MinCount=3,
     MaxCount=3,
