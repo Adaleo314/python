@@ -97,3 +97,28 @@ elif SourceLanguageCode in languages and TargetLanguageCode in languages:
     print("The SourceLanaguageCode and TargetLanguageCode are valid - proceeding")
 else:
     print("There is an issue")
+    
+    ######################################
+    
+    ###########input function examples
+    
+# Open the input file to get the json.
+def open_input():
+    with open(args.filename) as file_object:
+        contents = json.load(file_object)
+        return contents['Input']
+
+# Boto3 function to use Amazon Translate to translate the text and only return the Translated Text
+def translate_text(**kwargs):
+    client = boto3.client('translate')
+    response = client.translate_text(**kwargs)
+    print(response['TranslatedText'])
+
+# Add a Loop to iterate over the json file.
+def translate_loop():
+    input_text = open_input()
+    for item in input_text:
+        if input_validation(item) == True:
+            translate_text(**item)
+        else:
+            raise SystemError    
